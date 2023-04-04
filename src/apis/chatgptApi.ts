@@ -2,11 +2,14 @@ import request from "@/utils/request";
 import type { RootObject, Choice, Message ,Usage } from "./typings/chatgptApiType"
 import { chatgpt } from "@/configs/chatgpt";
 
+
+const apiKey = '在这里写自己的apikey'
+
 export const chatgptPost = (data: any): Promise<RootObject> =>
   request.post(chatgpt, data, {
     headers: {
       Authorization:
-        "Bearer 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",
+        `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
   });
